@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{%block conteudo%}
+  <h1 class="mt-5">{{ key_contato_detalhe.nome }} </h1>
+  <dl>
+    <dt>Comentário</dt>
+    <dd>{{ key_contato_detalhe.comentario }}</dd>
+  </dl>
+{%endblock%}

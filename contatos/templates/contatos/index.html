@@ -1,27 +1,28 @@
 {% extends 'base.html' %}
 
-{%block conteudo%}
+{% block conteudo %}
 <h1 class="mt-5">Minha agenda</h1>
 
 <table class="table">
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Sobrenome</th>
-      <th>Telefone</th>
+      <th>Celular</th>
+      <th>e-mail</th>
       <th>Categoria</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      {% for c in key_contato %}
       <td>
-        <a href="#"> João</a>
+        <a href="{% url 'detail' c.id %}"> {{ c.nome }}</a>
       </td>
-      <td>Miranda</td>
-      <td>35 9 5555-5555</td>
-      <td>Família</td>
+      <td>{{ c.cel }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.categoria }}</td>
     </tr>
-
+        {% endfor %}
   </tbody>
 </table>
-{%endblock%}
+{% endblock %}
